@@ -2,7 +2,7 @@
 
 void itc_even_index_list (const vector <int> &mass, vector <int> &mass2){
     int i;
-    for(i = 1; i < mass.size(); i+=2){
+    for(i = 0; i < mass.size(); i+=2){
         mass2.push_back(mass[i]);
     }
 }
@@ -19,7 +19,7 @@ void itc_even_parts_list(const vector <int> &mass, vector <int> &mass2){
 int itc_positive_list(const vector <int> &mass){
     int kol;
     for(int i = 0; i < mass.size(); i++){
-        if(mass[i] > 0){
+        if(mass[i] >= 0){
             kol++;
         }
     }
@@ -27,14 +27,11 @@ int itc_positive_list(const vector <int> &mass){
 }
 
 int itc_sl_list(const vector <int> &mass){
-    int kol = 1;
+    int kol = 0;
     for(int i = 1; i < mass.size(); i++){
         if(mass[i] > mass[i-1]){
             kol++;
         }
-    }
-    if (kol == 1){
-        kol = 0;
     }
     return kol;
 }
