@@ -20,11 +20,13 @@ void itc_rev_list(vector <int> &mass){
 
 void itc_rshift_list(vector <int> &mass){
     int len = mass.size();
-    int c = mass[len - 1];
-    for(int i = len - 1; i > 0; i--){
-        mass[i] = mass[i - 1];
+    if (len > 0){
+        int c = mass[len - 1];
+        for(int i = len - 1; i > 0; i--){
+            mass[i] = mass[i - 1];
+        }
+        mass[0] = c;
     }
-    mass[0] = c;
 }
 
  void itc_super_shift_list(vector <int> &mass, int n){
